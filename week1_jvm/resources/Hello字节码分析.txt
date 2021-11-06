@@ -1,0 +1,148 @@
+Classfile /D:/Study/GeekTime/JavaSeniorCamp/JavaCourseHomework/week1_jvm/src/Hello.class
+  Last modified 2021-11-6; size 871 bytes       // 修改时间，创建大小
+  MD5 checksum b653cb0bf700b9008433d87f2d1f26da
+  Compiled from "Hello.java"
+public class Hello
+  minor version: 0
+  major version: 52                 // 表示版本号为52.0, 即JDK8, 向下兼容
+  flags: ACC_PUBLIC, ACC_SUPER      // 修饰符 public, 有父类Object
+Constant pool:
+   #1 = Methodref          #19.#30        // java/lang/Object."<init>":()V
+   #2 = Long               3l
+   #4 = Double             4.0d
+   #6 = Double             50.0d
+   #8 = Fieldref           #31.#32        // java/lang/System.out:Ljava/io/PrintStream;
+   #9 = Class              #33            // java/lang/StringBuilder
+  #10 = Methodref          #9.#30         // java/lang/StringBuilder."<init>":()V
+  #11 = String             #34            // current i :
+  #12 = Methodref          #9.#35         // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #13 = Methodref          #9.#36         // java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+  #14 = String             #37            //  , value =
+  #15 = Methodref          #9.#38         // java/lang/StringBuilder.append:(D)Ljava/lang/StringBuilder;
+  #16 = Methodref          #9.#39         // java/lang/StringBuilder.toString:()Ljava/lang/String;
+  #17 = Methodref          #40.#41        // java/io/PrintStream.println:(Ljava/lang/String;)V
+  #18 = Class              #42            // Hello
+  #19 = Class              #43            // java/lang/Object
+  #20 = Utf8               <init>
+  #21 = Utf8               ()V
+  #22 = Utf8               Code
+  #23 = Utf8               LineNumberTable
+  #24 = Utf8               main
+  #25 = Utf8               ([Ljava/lang/String;)V
+  #26 = Utf8               StackMapTable
+  #27 = Class              #44            // "[Ljava/lang/String;"
+  #28 = Utf8               SourceFile
+  #29 = Utf8               Hello.java
+  #30 = NameAndType        #20:#21        // "<init>":()V
+  #31 = Class              #45            // java/lang/System
+  #32 = NameAndType        #46:#47        // out:Ljava/io/PrintStream;
+  #33 = Utf8               java/lang/StringBuilder
+  #34 = Utf8               current i :
+  #35 = NameAndType        #48:#49        // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #36 = NameAndType        #48:#50        // append:(I)Ljava/lang/StringBuilder;
+  #37 = Utf8                , value =
+  #38 = NameAndType        #48:#51        // append:(D)Ljava/lang/StringBuilder;
+  #39 = NameAndType        #52:#53        // toString:()Ljava/lang/String;
+  #40 = Class              #54            // java/io/PrintStream
+  #41 = NameAndType        #55:#56        // println:(Ljava/lang/String;)V
+  #42 = Utf8               Hello
+  #43 = Utf8               java/lang/Object
+  #44 = Utf8               [Ljava/lang/String;
+  #45 = Utf8               java/lang/System
+  #46 = Utf8               out
+  #47 = Utf8               Ljava/io/PrintStream;
+  #48 = Utf8               append
+  #49 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #50 = Utf8               (I)Ljava/lang/StringBuilder;
+  #51 = Utf8               (D)Ljava/lang/StringBuilder;
+  #52 = Utf8               toString
+  #53 = Utf8               ()Ljava/lang/String;
+  #54 = Utf8               java/io/PrintStream
+  #55 = Utf8               println
+  #56 = Utf8               (Ljava/lang/String;)V
+{
+  public Hello();
+    descriptor: ()V
+    flags: ACC_PUBLIC       // 表示修饰符为public
+    Code:
+      stack=1, locals=1, args_size=1    // 栈深度为1，本地变量表长度为1，参数大小为1
+         0: aload_0                     // 从本地变量表0的位置加载到栈上
+         1: invokespecial #1            // Method java/lang/Object."<init>":()V 调用构造函数，#1表示常量池中标号为1
+         4: return                      // 返回
+      LineNumberTable:
+        line 1: 0                       // 出现在源代码第一行
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC       // 修饰符 public, static
+    Code:
+      stack=4, locals=10, args_size=1   // 栈深度为4, 本地变量表长度为10, 参数大小为1
+         0: iconst_1                    // 定义int类型常量1
+         1: istore_1                    // 将int类型常量存储到本地方法表1的位置
+         2: iconst_2                    // 定义int类型常量2
+         3: istore_2                    // 将int类型常量存储到本地方法表2的位置
+         4: ldc2_w        #2            // long 3l 将常量池中位置2的数压入栈中
+         7: lstore_3                    // 将long类型变量存储到本地方法表中3的位置
+         8: ldc2_w        #4            // double 4.0d 将常量池中位置4的数压入栈中
+        11: dstore        5             // 将double类型变量存储到本地方法表中5的位置
+        13: iconst_0                    // 定义int类型常量0
+        14: istore        7             // 将int类型常量存储到本地方法表中7的位置
+        16: iload         7             // 将本地方法表中7位置的int类型数据压入到栈中
+        18: bipush        10            // 将10压入到栈顶
+        20: if_icmpge     90            // 比较int类型的数是否大于等于10, 若大于10，则执行第90行处理，即返回; i表示int类型, cmp表示比较, ge表示大于等于
+        23: iload_1                     // 将本地方法表中位置1的int类型变量加载栈上
+        24: iload_2                     // 将本地方法表中位置2的int类型变量加载栈上
+        25: iadd                        // 两个int类型数据相加
+        26: i2l                         // 将int类型转为long类型
+        27: lload_3                     // 将本地方法表中位置3的类型long变量加载栈上
+        28: ladd                        // 两个long类型数据相加
+        29: l2d                         // 将long类型转为double类型
+        30: dload         5             // 将本地方法表中5位置的double类型数据加载到栈上
+        32: dadd                        // 两个double类型数据相加
+        33: iload         7             // 将本地方法表中7位置的int类型数据加载到栈上
+        35: i2d                         // 将int类型转为double类型
+        36: dmul                        // 两个double类型数据相乘
+        37: dstore        8             // 将double类型结果存储到本地方法表中8的位置
+        39: dload         8             // 将本地方法表中8位置的double类型数据加载到栈上
+        41: ldc2_w        #6            // double 50.0d 将常量池中位置6的数压入栈中
+        44: dcmpg                       // 比较之前的double结果是否大于50
+        45: ifgt          84            // 若大于50则执行第84行处理，即将本地方法表中7位置的int类型数据自增1
+        48: getstatic     #8            // Field java/lang/System.out:Ljava/io/PrintStream; 将常量池中标号为8的对象压入栈中
+        51: new           #9            // class java/lang/StringBuilder 创建常量池中标号为9的对象
+        54: dup                         // 将该对象压入栈中
+        55: invokespecial #10           // Method java/lang/StringBuilder."<init>":()V 调用常量池中标号为10的方法
+        58: ldc           #11           // String current i : 将常量池中标号为11的对象压入栈中
+        60: invokevirtual #12           // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; 调用常量池中标号为12的对象的方法
+        63: iload         7             // 将常量池中位置为7的的int类型数据压入栈中
+        65: invokevirtual #13           // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder; 调用常量池中标号为13的对象的方法
+        68: ldc           #14           // String  , value = 将常量池中标号为14的对象压入栈中
+        70: invokevirtual #12           // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; 调用常量池中标号为12的对象的方法
+        73: dload         8             // 将本地方法表中位置为8的double类型数据压入栈中
+        75: invokevirtual #15           // Method java/lang/StringBuilder.append:(D)Ljava/lang/StringBuilder; 调用常量池中标号为15的对象的方法
+        78: invokevirtual #16           // Method java/lang/StringBuilder.toString:()Ljava/lang/String; 调用常量池中标号为16的对象的方法
+        81: invokevirtual #17           // Method java/io/PrintStream.println:(Ljava/lang/String;)V 调用常量池中标号为17的对象的方法
+        84: iinc          7, 1          // 常量池中位置为7的int类型数据自增1
+        87: goto          16            // 执行第16行语句
+        90: return                      // 返回
+      LineNumberTable:
+        line 3: 0                       // 第0行语句对应源代码第3行语句(以下依次类推)
+        line 4: 2
+        line 5: 4
+        line 6: 8
+        line 8: 13
+        line 9: 23
+        line 10: 39
+        line 11: 48
+        line 8: 84
+        line 14: 90
+      StackMapTable: number_of_entries = 3
+        frame_type = 255 /* full_frame */
+          offset_delta = 16
+          locals = [ class "[Ljava/lang/String;", int, int, long, double, int ]
+          stack = []
+        frame_type = 251 /* same_frame_extended */
+          offset_delta = 67
+        frame_type = 250 /* chop */
+          offset_delta = 5
+}
+SourceFile: "Hello.java"
