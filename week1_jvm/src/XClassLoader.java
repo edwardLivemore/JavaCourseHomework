@@ -30,7 +30,7 @@ public class XClassLoader extends ClassLoader {
                 return defineClass(name, classBytes, 0, classBytes.length);
             } catch (IOException e) {
                 e.printStackTrace();
-                throw new ClassNotFoundException();
+                throw new ClassNotFoundException(name, e);
             }finally {
                 try {
                     inputStream.close();
