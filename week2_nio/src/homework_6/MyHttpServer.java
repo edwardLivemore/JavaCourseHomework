@@ -12,7 +12,7 @@ public class MyHttpServer {
     public static void main(String[] args) throws IOException {
         ThreadPoolExecutor executor = new ThreadPoolExecutor(8, 16,
                 60, TimeUnit.SECONDS,
-                new LinkedBlockingDeque<>(100), new ThreadPoolExecutor.CallerRunsPolicy());
+                new LinkedBlockingDeque<>(100), new ThreadPoolExecutor.AbortPolicy());
         final ServerSocket serverSocket = new ServerSocket(8801);
         while (true){
             final Socket socket = serverSocket.accept();
