@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.edward.starter.config.MyStarterAutoConfiguration
+com.edward.mystarter.config.MyStarterAutoConfiguration

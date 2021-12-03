@@ -1,4 +1,4 @@
-package com.edward.starter.config;
+package com.edward.mystarter.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

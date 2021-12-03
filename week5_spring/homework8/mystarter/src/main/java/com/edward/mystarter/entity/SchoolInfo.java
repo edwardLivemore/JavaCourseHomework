@@ -1,4 +1,4 @@
-package com.edward.starter.entity;
+package com.edward.mystarter.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

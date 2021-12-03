@@ -1,7 +1,8 @@
-package com.edward.starter.config;
+package com.edward.mystarter.config;
 
-import com.edward.starter.entity.Klass;
-import com.edward.starter.entity.Student;
+
+import com.edward.mystarter.entity.Klass;
+import com.edward.mystarter.entity.Student;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

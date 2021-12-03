@@ -1,10 +1,10 @@
-package com.edward.starter;
+package com.edward.mystarter;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class StarterDemoApplicationTests {
+class MystarterApplicationTests {
 
 	@Test
 	void contextLoads() {

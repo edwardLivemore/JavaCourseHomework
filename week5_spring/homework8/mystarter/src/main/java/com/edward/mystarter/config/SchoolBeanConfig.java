@@ -1,7 +1,7 @@
-package com.edward.starter.config;
+package com.edward.mystarter.config;
 
-import com.edward.starter.entity.Klass;
-import com.edward.starter.entity.School;
+import com.edward.mystarter.entity.Klass;
+import com.edward.mystarter.entity.School;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
