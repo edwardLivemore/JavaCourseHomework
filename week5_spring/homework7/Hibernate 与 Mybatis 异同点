@@ -1,0 +1,4 @@
+MyBatis优点: 原生SQL(XML语法), 直观, 对DBA友好
+Hibernate优点: 简单场景不用写SQL
+MyBatis缺点: SQL语句繁琐, 编写Mapper, 实体对象等繁琐, 建议使用MyBatis-generator, MyBatis-plus等插件
+Hibernate缺点: 对DBA不友好, SQL语句不直观, 上线前的审计检查麻烦 
