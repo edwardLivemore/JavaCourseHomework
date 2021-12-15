@@ -4,7 +4,6 @@ import com.edward.mysql.modules.order.model.Order;
 import com.edward.mysql.modules.order.mapper.OrderMapper;
 import com.edward.mysql.modules.order.service.OrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
