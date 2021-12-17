@@ -1,6 +1,5 @@
 package com.edward.multids_v1.dataSource;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 import javax.sql.DataSource;
@@ -9,8 +8,7 @@ import java.util.HashMap;
 public class DynamicDataSource extends AbstractRoutingDataSource {
     private static final ThreadLocal<String> HOLDER = new ThreadLocal<>();
 
-    public DynamicDataSource(@Qualifier("masterDataSource") DataSource masterDS,
-                             @Qualifier("slave1DataSource") DataSource slave1Ds){
+    public DynamicDataSource(DataSource masterDS, DataSource slave1Ds){
         super.setDefaultTargetDataSource(masterDS);
         HashMap<Object, Object> map = new HashMap<>();
         map.put("master", masterDS);

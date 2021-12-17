@@ -29,6 +29,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     }
 
     @Override
+    @ReadOnly
     public void insert(List<Order> orders) {
         log.info("正在插入订单记录");
         saveBatch(orders);

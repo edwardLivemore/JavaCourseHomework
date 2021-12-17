@@ -1,7 +1,6 @@
 package com.edward.multids_v1.modules.order.controller;
 
 
-import com.edward.multids_v1.annotation.ReadOnly;
 import com.edward.multids_v1.modules.order.model.Order;
 import com.edward.multids_v1.modules.order.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
