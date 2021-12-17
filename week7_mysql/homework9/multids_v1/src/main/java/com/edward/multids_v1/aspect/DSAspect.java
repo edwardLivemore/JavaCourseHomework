@@ -25,7 +25,8 @@ public class DSAspect {
             DynamicDataSource.setDataSource("master");
         }else{
             // 负载均衡(随机策略)
-            if(random.nextInt(2) == 0){
+            int num = random.nextInt(2);
+            if(num == 0){
                 log.info("switch datasource : slave1");
                 DynamicDataSource.setDataSource("slave1");
             }else {
