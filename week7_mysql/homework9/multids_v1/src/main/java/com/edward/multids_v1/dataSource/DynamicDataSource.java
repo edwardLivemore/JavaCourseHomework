@@ -8,11 +8,12 @@ import java.util.HashMap;
 public class DynamicDataSource extends AbstractRoutingDataSource {
     private static final ThreadLocal<String> HOLDER = new ThreadLocal<>();
 
-    public DynamicDataSource(DataSource masterDS, DataSource slave1Ds){
+    public DynamicDataSource(DataSource masterDS, DataSource slave1Ds, DataSource slave2Ds){
         super.setDefaultTargetDataSource(masterDS);
         HashMap<Object, Object> map = new HashMap<>();
         map.put("master", masterDS);
         map.put("slave1", slave1Ds);
+        map.put("slave2", slave2Ds);
         super.setTargetDataSources(map);
         super.afterPropertiesSet();
     }

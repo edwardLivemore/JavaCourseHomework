@@ -18,34 +18,44 @@ import javax.sql.DataSource;
 @MapperScan(basePackages = "com.edward.multids_v1.modules.order.mapper", sqlSessionFactoryRef = "sqlSessionFactory")
 public class DynamicDataSourceConfig {
     // 主数据源
-    @Bean("masterDataSource")
+    @Bean
     @ConfigurationProperties("spring.datasource.master")
     public DataSource masterDataSource(){
         return DataSourceBuilder.create().build();
     }
-
     @Bean
     public DataSourceTransactionManager masterTransactionManager(@Qualifier("masterDataSource") DataSource dataSource){
         return new DataSourceTransactionManager(dataSource);
     }
 
-    // 从数据源
-    @Bean("slave1DataSource")
+    // 从数据源1
+    @Bean
     @ConfigurationProperties("spring.datasource.slave1")
     public DataSource slave1DataSource(){
         return DataSourceBuilder.create().build();
     }
-
     @Bean
     public DataSourceTransactionManager slave1TransactionManager(@Qualifier("slave1DataSource") DataSource dataSource){
         return new DataSourceTransactionManager(dataSource);
     }
 
+    // 从数据源2
+    @Bean
+    @ConfigurationProperties("spring.datasource.slave2")
+    public DataSource slave2DataSource(){
+        return DataSourceBuilder.create().build();
+    }
+    @Bean
+    public DataSourceTransactionManager slave2TransactionManager(@Qualifier("slave2DataSource") DataSource dataSource){
+        return new DataSourceTransactionManager(dataSource);
+    }
 
     // 多数据源
     @Bean
-    public DynamicDataSource dynamicDataSource(@Qualifier("masterDataSource") DataSource masterDS, @Qualifier("slave1DataSource")DataSource slave1DS){
-        return new DynamicDataSource(masterDS, slave1DS);
+    public DynamicDataSource dynamicDataSource(@Qualifier("masterDataSource") DataSource masterDS,
+                                               @Qualifier("slave1DataSource")DataSource slave1DS,
+                                               @Qualifier("slave2DataSource")DataSource slave2DS){
+        return new DynamicDataSource(masterDS, slave1DS, slave2DS);
     }
 
     @Bean
