@@ -53,8 +53,8 @@ public class DynamicDataSourceConfig {
     // 多数据源
     @Bean
     public DynamicDataSource dynamicDataSource(@Qualifier("masterDataSource") DataSource masterDS,
-                                               @Qualifier("slave1DataSource")DataSource slave1DS,
-                                               @Qualifier("slave2DataSource")DataSource slave2DS){
+                                               @Qualifier("slave1DataSource") DataSource slave1DS,
+                                               @Qualifier("slave2DataSource") DataSource slave2DS){
         return new DynamicDataSource(masterDS, slave1DS, slave2DS);
     }
 

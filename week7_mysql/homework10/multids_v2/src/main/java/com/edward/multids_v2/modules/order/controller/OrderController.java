@@ -3,6 +3,7 @@ package com.edward.multids_v2.modules.order.controller;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
 
 /**
  * <p>
@@ -12,6 +13,7 @@ import org.springframework.boot.ApplicationRunner;
  * @author eagle
  * @since 2021-12-17
  */
+@Component
 public class OrderController implements ApplicationRunner {
 
     @Override
