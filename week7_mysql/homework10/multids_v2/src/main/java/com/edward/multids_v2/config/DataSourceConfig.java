@@ -5,6 +5,9 @@ import com.zaxxer.hikari.HikariDataSource;
 import lombok.Data;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.shardingsphere.driver.api.ShardingSphereDataSourceFactory;
+import org.apache.shardingsphere.infra.config.algorithm.ShardingSphereAlgorithmConfiguration;
+import org.apache.shardingsphere.readwritesplitting.api.ReadwriteSplittingRuleConfiguration;
+import org.apache.shardingsphere.readwritesplitting.api.rule.ReadwriteSplittingDataSourceRuleConfiguration;
 import org.apache.shardingsphere.sharding.api.config.ShardingRuleConfiguration;
 import org.apache.shardingsphere.sharding.api.config.rule.ShardingTableRuleConfiguration;
 import org.mybatis.spring.annotation.MapperScan;
@@ -54,13 +57,23 @@ public class DataSourceConfig {
         dataSourceMap.put("slave1", slave1DataSource);
         dataSourceMap.put("slave2", slave2DataSource);
 
+        // 读写分离数据源配置
+        ReadwriteSplittingDataSourceRuleConfiguration dataSourceConfig =
+                new ReadwriteSplittingDataSourceRuleConfiguration("multiDs", null, "master",
+                        Arrays.asList("slave1", "slave2"), "randomLb");
+
         // 配置表规则
-        ShardingTableRuleConfiguration tableRuleConfiguration = new ShardingTableRuleConfiguration("order");
+        Properties properties = new Properties();
+        properties.put("slave1", "1");
+        properties.put("slave2", "2");
+        properties.setProperty("sql-show", String.valueOf(true));
 
-        ShardingRuleConfiguration ruleConfiguration = new ShardingRuleConfiguration();
-        ruleConfiguration.getTables().add(tableRuleConfiguration);
+        ShardingSphereAlgorithmConfiguration algorithmConfiguration = new ShardingSphereAlgorithmConfiguration("RANDOM", properties);
+        Map<String, ShardingSphereAlgorithmConfiguration> configMap = new HashMap<>(1);
+        configMap.put("randomLb", algorithmConfiguration);
+        ReadwriteSplittingRuleConfiguration ruleConfiguration = new ReadwriteSplittingRuleConfiguration(Collections.singleton(dataSourceConfig), configMap);
 
-        return ShardingSphereDataSourceFactory.createDataSource(dataSourceMap, Collections.singletonList(ruleConfiguration), new Properties());
+        return ShardingSphereDataSourceFactory.createDataSource(dataSourceMap, Collections.singleton(ruleConfiguration), properties);
     }
 
     @Bean
