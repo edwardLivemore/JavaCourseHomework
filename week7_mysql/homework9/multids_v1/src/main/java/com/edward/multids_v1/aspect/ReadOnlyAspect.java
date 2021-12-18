@@ -22,11 +22,7 @@ public class ReadOnlyAspect {
         if(StringUtils.isNotEmpty(readOnly.value())){
             // 负载均衡(随机策略)
             int num = random.nextInt(2);
-            if(num == 0){
-                DynamicDataSource.setDataSource("slave1");
-            }else {
-                DynamicDataSource.setDataSource("slave2");
-            }
+            DynamicDataSource.setDataSource("slave" + (num + 1));
             log.info("switch datasource : {}", DynamicDataSource.getDataSource());
         }
         Object proceed = pjp.proceed();
