@@ -24,6 +24,10 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
         return HOLDER.get();
     }
 
+    public static String getDataSource(){
+        return HOLDER.get();
+    }
+
     public static void setDataSource(String dataSource){
         HOLDER.set(dataSource);
     }

@@ -1,6 +1,6 @@
 package com.edward.multids_v1.aspect;
 
-import com.edward.multids_v1.annotation.DS;
+import com.edward.multids_v1.annotation.ReadOnly;
 import com.edward.multids_v1.dataSource.DynamicDataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -14,26 +14,24 @@ import java.util.Random;
 @Aspect
 @Slf4j
 @Component
-public class DSAspect {
+public class ReadOnlyAspect {
     private final Random random = new Random();
 
-    @Around("@annotation(ds)")
-    public Object around(ProceedingJoinPoint pjp, DS ds) throws Throwable {
-
-        if(ds.value().equals("master") || StringUtils.isEmpty(ds.value())){
-            log.info("switch datasource : master");
-            DynamicDataSource.setDataSource("master");
-        }else{
+    @Around("@annotation(readOnly)")
+    public Object around(ProceedingJoinPoint pjp, ReadOnly readOnly) throws Throwable {
+        if(StringUtils.isNotEmpty(readOnly.value())){
             // 负载均衡(随机策略)
             int num = random.nextInt(2);
             if(num == 0){
-                log.info("switch datasource : slave1");
                 DynamicDataSource.setDataSource("slave1");
             }else {
-                log.info("switch datasource : slave2");
                 DynamicDataSource.setDataSource("slave2");
             }
+            log.info("switch datasource : {}", DynamicDataSource.getDataSource());
         }
-        return pjp.proceed();
+        Object proceed = pjp.proceed();
+        // 清理掉当前设置的数据源，让默认的数据源不受影响
+        DynamicDataSource.clearDataSource();
+        return proceed;
     }
 }
