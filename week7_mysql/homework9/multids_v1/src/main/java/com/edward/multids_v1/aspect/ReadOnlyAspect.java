@@ -19,13 +19,13 @@ public class ReadOnlyAspect {
 
     @Around("@annotation(readOnly)")
     public Object around(ProceedingJoinPoint pjp, ReadOnly readOnly) throws Throwable {
-        if(StringUtils.isNotEmpty(readOnly.value())){
-            // 负载均衡(随机策略)
-            int num = random.nextInt(2);
-            DynamicDataSource.setDataSource("slave" + (num + 1));
-            log.info("switch datasource : {}", DynamicDataSource.getDataSource());
-        }
+        // 负载均衡(随机策略)
+        DynamicDataSource.setDataSource("slave" + (random.nextInt(2) + 1));
+        log.info("switch datasource : {}", DynamicDataSource.getDataSource());
+
+        // 执行处理
         Object proceed = pjp.proceed();
+
         // 清理掉当前设置的数据源，让默认的数据源不受影响
         DynamicDataSource.clearDataSource();
         return proceed;

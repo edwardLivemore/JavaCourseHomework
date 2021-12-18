@@ -35,7 +35,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     }
 
     @Override
-    @ReadOnly("slave")
+    @ReadOnly
     public List<Order> selectList() {
         log.info("正在获取所有订单信息");
         return list();
@@ -51,7 +51,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     }
 
     @Override
-    @ReadOnly("slave")
+    @ReadOnly
     public Order selectOrder(int id) {
         log.info("正在获取订单{}的信息", id);
         return getById(id);
