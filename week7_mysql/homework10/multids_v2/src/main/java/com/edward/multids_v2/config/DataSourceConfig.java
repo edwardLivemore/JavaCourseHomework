@@ -61,18 +61,17 @@ public class DataSourceConfig {
         ReadwriteSplittingDataSourceRuleConfiguration dataSourceConfig =
                 new ReadwriteSplittingDataSourceRuleConfiguration("multiDs", null, "master",
                         Arrays.asList("slave1", "slave2"), "randomLb");
-
-        // 配置表规则
         Properties properties = new Properties();
         properties.put("slave1", "1");
         properties.put("slave2", "2");
         properties.setProperty("sql-show", String.valueOf(true));
 
+        // 负载均衡配置(随机)
         ShardingSphereAlgorithmConfiguration algorithmConfiguration = new ShardingSphereAlgorithmConfiguration("RANDOM", properties);
         Map<String, ShardingSphereAlgorithmConfiguration> configMap = new HashMap<>(1);
         configMap.put("randomLb", algorithmConfiguration);
-        ReadwriteSplittingRuleConfiguration ruleConfiguration = new ReadwriteSplittingRuleConfiguration(Collections.singleton(dataSourceConfig), configMap);
 
+        ReadwriteSplittingRuleConfiguration ruleConfiguration = new ReadwriteSplittingRuleConfiguration(Collections.singleton(dataSourceConfig), configMap);
         return ShardingSphereDataSourceFactory.createDataSource(dataSourceMap, Collections.singleton(ruleConfiguration), properties);
     }
 
