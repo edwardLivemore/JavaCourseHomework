@@ -1,20 +1,39 @@
 spring:
-  datasource:
-    master:
-      jdbc-url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
-      username: root
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      type: com.zaxxer.hikari.HikariDataSource
-    slave1:
-      jdbc-url: jdbc:mysql://127.0.0.1:3307/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
-      username: root
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      type: com.zaxxer.hikari.HikariDataSource
-    slave2:
-      jdbc-url: jdbc:mysql://127.0.0.1:3308/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
-      username: root
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      type: com.zaxxer.hikari.HikariDataSource
+  shardingsphere:
+    datasource:
+      names: master,slave1,slave2
+
+      # 主库
+      master:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+        username: root
+
+      # 从库1
+      slave1:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://127.0.0.1:3307/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+        username: root
+
+      # 从库2
+      slave2:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://127.0.0.1:3308/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+        username: root
+
+    # 读写分离
+    masterslave:
+      load-balance-algorithm-type: round_robin
+      name: ds
+      master-data-source-name: master
+      slave-data-source-names: slave1,slave2
+
+    props:
+      sql:
+        show: true
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
@@ -24,4 +43,4 @@ mybatis-plus:
   configuration:
     auto-mapping-behavior: partial
     map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
