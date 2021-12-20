@@ -13,14 +13,14 @@ public class OrderController implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        // 1. 循环100万次插入数据
-        orderService.insert();
+        // 1. 使用PrepareStatement批量插入100万条数据
+        orderService.insertByBatch();
 
         // 2. 使用PrepareStatement循环100万次插入数据
         orderService.insertByLoop();
 
-        // 3. 使用PrepareStatement批量插入100万条数据
-        orderService.insertByBatch();
+        // 3. 循环100万次插入数据
+        orderService.insert();
     }
 }
 

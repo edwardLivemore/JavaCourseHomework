@@ -59,8 +59,26 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     @Override
     public void insertByBatch() {
         System.out.println("正在批量插入100万条数据...");
-        saveBatch(orders);
-        System.out.println("循环批量100万条数据完成");
+        // 分组
+        List<List<Order>> groups = averageSplit(orders, 10);
+        // 多线程插入数据
+        groups.parallelStream().forEach(group -> saveBatch(group, 10000));
+        System.out.println("批量100万条数据完成");
+    }
+
+    private <T> List<List<T>> averageSplit(List<T> source, int num) {
+        List<List<T>> result = new ArrayList<>();
+        int groupSize = source.size() / num;
+        for(int i = 0; i < num; i++){
+            List<T> tmp;
+            if(i == num - 1){
+                tmp = source.subList(i * groupSize, source.size());
+            }else{
+                tmp = source.subList(i * groupSize, (i + 1) * groupSize);
+            }
+            result.add(tmp);
+        }
+        return result;
     }
 
     private void buildOrders() {
