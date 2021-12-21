@@ -19,6 +19,7 @@ spring:
 
     sharding:
       default-data-source-name: master
+      # 广播表, 必须同时成功
       broadcast-tables: order
 
     props:
