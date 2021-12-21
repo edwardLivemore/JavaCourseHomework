@@ -3,14 +3,14 @@ spring:
     datasource:
       names: master,slave1
 
-      # Êı¾İÔ´1
+      # æ•°æ®æº1
       master:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
         jdbc-url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
         username: root
 
-      # Êı¾İÔ´2
+      # æ•°æ®æº2
       slave1:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
@@ -19,6 +19,7 @@ spring:
 
     sharding:
       default-data-source-name: master
+      broadcast-tables: order
 
     props:
       sql:
