@@ -68,6 +68,8 @@ public class OrderController implements ApplicationRunner {
         queryOrderByCode(60, 80);
 
         log.info("总订单数为: {}", orderService.list().size());
+
+        System.exit(0);
     }
 
     private void queryOrderByCode(Integer min, Integer max) {
