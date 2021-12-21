@@ -18,4 +18,8 @@
         <result column="update_time" property="updateTime" />
     </resultMap>
 
+    <select id="truncate">
+        TRUNCATE TABLE `order`
+    </select>
+
 </mapper>

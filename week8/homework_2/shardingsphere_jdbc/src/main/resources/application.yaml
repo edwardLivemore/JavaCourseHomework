@@ -1,20 +1,46 @@
-#spring:
-#  datasource:
-#    master:
-#      jdbc-url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
-#      username: root
-#      driver-class-name: com.mysql.cj.jdbc.Driver
-#      type: com.zaxxer.hikari.HikariDataSource
-#    slave1:
-#      jdbc-url: jdbc:mysql://127.0.0.1:3307/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
-#      username: root
-#      driver-class-name: com.mysql.cj.jdbc.Driver
-#      type: com.zaxxer.hikari.HikariDataSource
-#    slave2:
-#      jdbc-url: jdbc:mysql://127.0.0.1:3308/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
-#      username: root
-#      driver-class-name: com.mysql.cj.jdbc.Driver
-#      type: com.zaxxer.hikari.HikariDataSource
+spring:
+  shardingsphere:
+    datasource:
+      names: ds0,ds1
+
+      # 数据源1
+      ds0:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/ds0?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+        username: root
+
+      # 数据源2
+      ds1:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/ds1?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+        username: root
+
+    # 分库策略(user_id)
+    sharding:
+      default-database-strategy:
+        inline:
+          sharding-column: user_id
+          algorithm-expression: ds$->{user_id % 2}
+
+      # 分表策略(order_id)
+      tables:
+        order:
+          actual-data-nodes: ds$->{0..1}.order_$->{0..15}
+          table-strategy:
+            inline:
+              sharding-column: id
+              algorithm-expression: order_$->{id % 16}
+          key-generator:
+            column: id
+            type: SNOWFLAKE
+
+      binding-tables: order
+    props:
+      sql:
+        show: true
+
 
 
 mybatis-plus:
@@ -25,7 +51,4 @@ mybatis-plus:
   configuration:
     auto-mapping-behavior: partial
     map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-spring:
-  shardingsphere:
-    datasource:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
