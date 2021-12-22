@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.edward.shardingsphereseata.modules.order.mapper.OrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.edward.shardingsphereseata.modules.order.model.Order">
+        <id column="id" property="id" />
+        <result column="code" property="code" />
+        <result column="user_id" property="userId" />
+        <result column="sku_ids" property="skuIds" />
+        <result column="nums" property="nums" />
+        <result column="total_price" property="totalPrice" />
+        <result column="pay_method" property="payMethod" />
+        <result column="bank_account" property="bankAccount" />
+        <result column="pay_time" property="payTime" />
+        <result column="express_ids" property="expressIds" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+</mapper>
