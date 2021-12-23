@@ -17,8 +17,4 @@ public class TransactionConfiguration {
         return new DataSourceTransactionManager(dataSource);
     }
 
-//    @Bean
-//    public DataSourceTransactionManager dataSourceTransactionManager(DataSource dataSource){
-//        return new DataSourceTransactionManager(dataSource);
-//    }
 }
