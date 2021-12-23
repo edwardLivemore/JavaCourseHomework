@@ -69,6 +69,7 @@ public class PlatformOrderController implements ApplicationRunner {
     private void queryOrders() {
         log.info("正在查询订单");
         List<PlatformOrder> orders = platformOrderService.list();
+        log.info("订单数量: {}", orders.size());
         orders.forEach(order -> {
             log.info("订单{}信息: ", order.getCode());
             log.info("用户id: {}", order.getUserId());
