@@ -60,8 +60,8 @@ public class PlatformOrderServiceImpl extends ServiceImpl<PlatformOrderMapper, P
         save(order);
 
         // 创建订单商品
-        // 故意设置商品数为3, 导致数组下标越界
-        itemNum = 3;
+        // 故意设置商品数+1, 导致数组下标越界
+        itemNum++;
         platformOrderItemService.createOrderItems(order.getId(), itemNum, itemNames, itemPrices);
         log.info("订单生成成功");
     }
