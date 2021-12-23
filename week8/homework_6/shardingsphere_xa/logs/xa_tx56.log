@@ -1,0 +1,3 @@
+{"id":"172.19.144.1.tm164024207789400001","wasCommitted":true,"participants":[{"uri":"172.19.144.1.tm1","state":"COMMITTING","expires":1640242378118,"resourceName":"resource-1-ds0"},{"uri":"172.19.144.1.tm2","state":"COMMITTING","expires":1640242378118,"resourceName":"resource-2-ds1"}]}
+{"id":"172.19.144.1.tm164024207789400001","wasCommitted":true,"participants":[{"uri":"172.19.144.1.tm1","state":"TERMINATED","expires":1640242378134,"resourceName":"resource-1-ds0"},{"uri":"172.19.144.1.tm2","state":"TERMINATED","expires":1640242378134,"resourceName":"resource-2-ds1"}]}
+{"id":"172.19.144.1.tm164024207822200002","wasCommitted":false,"participants":[{"uri":"172.19.144.1.tm3","state":"TERMINATED","expires":1640242378238,"resourceName":"resource-1-ds0"}]}
