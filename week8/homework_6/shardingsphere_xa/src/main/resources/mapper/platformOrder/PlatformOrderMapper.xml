@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.edward.shardingsphere_xa.modules.platformOrder.mapper.PlatformOrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.edward.shardingsphere_xa.modules.platformOrder.model.PlatformOrder">
+        <id column="id" property="id" />
+        <result column="code" property="code" />
+        <result column="user_id" property="userId" />
+        <result column="total_price" property="totalPrice" />
+        <result column="ceate_time" property="ceateTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <select id="truncate">
+        TRUNCATE TABLE `platform_order`
+    </select>
+
+</mapper>
