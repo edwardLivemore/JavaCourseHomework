@@ -1,30 +1,65 @@
 spring:
   shardingsphere:
     datasource:
-      names: master,slave1
+      names: ds0,ds1
 
       # 数据源1
-      master:
+      ds0:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/ds0?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
         username: root
 
       # 数据源2
-      slave1:
+      ds1:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://127.0.0.1:3307/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/ds1?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
         username: root
 
     sharding:
-      default-data-source-name: master
-      # 广播表, 必须同时成功
-      broadcast-tables: order
+      tables:
+        platform_order:
+          actual-data-nodes: ds0.platform_order
+          key-generator:
+            column: id
+            type: SNOWFLAKE
+
+        platform_order_item:
+          actual-data-nodes: ds1.platform_order_item
+          key-generator:
+            column: id
+            type: SNOWFLAKE
+
+      default-data-source-name: ds0
 
     props:
       sql:
         show: true
+
+
+seata:
+  enabled: true
+  application-id: applicationName
+  tx-service-group: my_test_tx_group
+  enable-auto-data-source-proxy: true
+  config:
+    type: nacos
+    nacos:
+      namespace: ""
+      server-addr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      userName: "nacos"
+      password: "nacos"
+
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: 127.0.0.1:8848
+      namespace:
+      userName: "nacos"
+      password: "nacos"
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
