@@ -29,13 +29,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="517fdb65-4ac2-43ad-a56b-07335a5714be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/rpcfx-demo-api/src/main/java/io/kimmking/rpcfx/demo/api/Generic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpcfx-demo-api/src/main/java/io/kimmking/rpcfx/demo/api/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpcfx-demo-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-demo-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpcfx-demo-api/rpcfx-demo-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-demo-api/rpcfx-demo-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpcfx-demo-api/src/main/java/io/kimmking/rpcfx/demo/api/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-demo-api/src/main/java/io/kimmking/rpcfx/demo/api/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpcfx-demo-api/src/main/java/io/kimmking/rpcfx/demo/api/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-demo-api/src/main/java/io/kimmking/rpcfx/demo/api/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpcfx-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/Rpcfx.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/Rpcfx.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,19 +73,6 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager" selected="Spring Boot.RpcfxClientApplication">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RpcfxClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="rpcfx-demo-consumer" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="io.kimmking.rpcfx.demo.consumer.RpcfxClientApplication" />
