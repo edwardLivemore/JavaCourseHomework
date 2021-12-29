@@ -29,14 +29,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="517fdb65-4ac2-43ad-a56b-07335a5714be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpcfx-demo-api/src/main/java/io/kimmking/rpcfx/demo/api/Generic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpcfx-demo-api/src/main/java/io/kimmking/rpcfx/demo/api/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/server/RpcfxInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/server/RpcfxInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpcfx-demo-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-demo-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpcfx-demo-api/rpcfx-demo-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-demo-api/rpcfx-demo-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpcfx-demo-api/src/main/java/io/kimmking/rpcfx/demo/api/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-demo-api/src/main/java/io/kimmking/rpcfx/demo/api/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpcfx-demo-api/src/main/java/io/kimmking/rpcfx/demo/api/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-demo-api/src/main/java/io/kimmking/rpcfx/demo/api/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -49,7 +61,9 @@
     </option>
   </component>
   <component name="ProjectId" id="22u3BMnuuD7RMr0yKxn5pn77ukE" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -58,18 +72,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../JavaCourseCodes/07rpc" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager" selected="Spring Boot.RpcfxClientApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,10 +156,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1640684579139" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1640675365268">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1640758276672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1640675365268" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1640758276672" />
     <state x="556" y="220" key="RollbackChangesDialog" timestamp="1640676198196">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
