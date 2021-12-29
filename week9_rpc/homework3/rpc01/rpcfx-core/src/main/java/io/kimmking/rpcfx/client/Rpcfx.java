@@ -23,7 +23,7 @@ public final class Rpcfx {
         ParserConfig.getGlobalInstance().addAccept("io.kimmking");
     }
 
-    public static <T, filters> T createFromRegistry(final Class<T> serviceClass, final String zkUrl, Router router, LoadBalancer loadBalance, Filter filter) {
+    public static <T, filters> T createFromRegistry(final Class<? extends Service> serviceClass, final String zkUrl, Router router, LoadBalancer loadBalance, Filter filter) {
 
         // 加filte之一
 
@@ -43,19 +43,21 @@ public final class Rpcfx {
     public static <T> T create(final Class<T> serviceClass, final String url, Filter... filters) {
 
         // 0. 替换动态代理 -> 字节码生成
-        return (T) Proxy.newProxyInstance(Rpcfx.class.getClassLoader(), new Class[]{serviceClass}, new RpcfxInvocationHandler(serviceClass, url, filters));
+        return (T) Proxy.newProxyInstance(Rpcfx.class.getClassLoader(),
+                new Class[]{serviceClass},
+                new RpcfxInvocationHandler(serviceClass, url, filters));
 
     }
 
-    public static class RpcfxInvocationHandler implements InvocationHandler {
+    public static class RpcfxInvocationHandler<T extends Service> implements InvocationHandler {
 
         public static final MediaType JSONTYPE = MediaType.get("application/json; charset=utf-8");
 
-        private final Class<Service> serviceClass;
+        private final Class<T> serviceClass;
         private final String url;
         private final Filter[] filters;
 
-        public <T> RpcfxInvocationHandler(Class<T> serviceClass, String url, Filter... filters) {
+        public RpcfxInvocationHandler(Class<T> serviceClass, String url, Filter... filters) {
             this.serviceClass = serviceClass;
             this.url = url;
             this.filters = filters;
@@ -72,7 +74,7 @@ public final class Rpcfx {
             // mock == true, new Student("hubao");
 
             RpcfxRequest request = new RpcfxRequest();
-            request.setServiceClass(this.serviceClass.getName());
+            request.setServiceClass(this.serviceClass);
             request.setMethod(method.getName());
             request.setParams(params);
 
