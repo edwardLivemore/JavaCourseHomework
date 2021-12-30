@@ -5,6 +5,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import io.kimmking.rpcfx.api.RpcfxRequest;
 import io.kimmking.rpcfx.api.RpcfxResolver;
 import io.kimmking.rpcfx.api.RpcfxResponse;
+import io.kimmking.rpcfx.common.exception.RpcfxException;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -40,10 +41,11 @@ public class RpcfxInvoker {
 
             // 2.封装一个统一的RpcfxException
             // 客户端也需要判断异常
-            e.printStackTrace();
-            response.setException(e);
-            response.setStatus(false);
-            return response;
+//            e.printStackTrace();
+//            response.setException(e);
+//            response.setStatus(false);
+//            return response;
+            throw new RpcfxException(502, "调用服务失败: " + e.getMessage());
         }
     }
 
