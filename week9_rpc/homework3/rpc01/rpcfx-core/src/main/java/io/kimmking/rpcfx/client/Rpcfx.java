@@ -23,7 +23,7 @@ public final class Rpcfx {
         ParserConfig.getGlobalInstance().addAccept("io.kimmking");
     }
 
-    public static <T, filters> T createFromRegistry(final Class<T> serviceClass, final String zkUrl, Router router, LoadBalancer loadBalance, Filter filter) {
+    public static <T, filters> T createFromRegistry(final Class<T> serviceClass, final String zkUrl, Router router, LoadBalancer loadBalance, Filter filter, String host, Integer port) {
 
         // 加filte之一
 
@@ -36,16 +36,16 @@ public final class Rpcfx {
 
         String url = loadBalance.select(urls); // router, loadbalance
 
-        return (T) create(serviceClass, url, filter);
+        return (T) create(serviceClass, url, host, port, filter);
 
     }
 
-    public static <T> T create(final Class<T> serviceClass, final String url, Filter... filters) {
+    public static <T> T create(final Class<T> serviceClass, final String url, final String host, final Integer port, Filter... filters) {
 
         // 0. 替换动态代理 -> 字节码生成
         return (T) Proxy.newProxyInstance(Rpcfx.class.getClassLoader(),
                 new Class[]{serviceClass},
-                new RpcfxInvocationHandler(serviceClass, url, filters));
+                new RpcfxInvocationHandler(serviceClass, url, host, port, filters));
 
     }
 
@@ -55,11 +55,15 @@ public final class Rpcfx {
 
         private final Class<T> serviceClass;
         private final String url;
+        private final String host;
+        private final Integer port;
         private final Filter[] filters;
 
-        public RpcfxInvocationHandler(Class<T> serviceClass, String url, Filter... filters) {
+        public RpcfxInvocationHandler(Class<T> serviceClass, String url, String host, Integer port, Filter... filters) {
             this.serviceClass = serviceClass;
             this.url = url;
+            this.host = host;
+            this.port = port;
             this.filters = filters;
         }
 
@@ -86,7 +90,7 @@ public final class Rpcfx {
                 }
             }
 
-            RpcfxResponse response = post(request, url);
+            RpcfxResponse response = post(request, url, host, port);
 
             // 加filter地方之三
             // Student.setTeacher("cuijing");
@@ -100,20 +104,25 @@ public final class Rpcfx {
             return JSON.parse(response.getResult().toString());
         }
 
-        private RpcfxResponse post(RpcfxRequest req, String url) throws IOException {
+        private RpcfxResponse post(RpcfxRequest req, String url, String host, Integer port) throws Exception {
             String reqJson = JSON.toJSONString(req);
             System.out.println("req json: "+reqJson);
 
             // 1.可以复用client
             // 2.尝试使用httpclient或者netty client
-            OkHttpClient client = new OkHttpClient();
-            final Request request = new Request.Builder()
-                    .url(url)
-                    .post(RequestBody.create(JSONTYPE, reqJson))
-                    .build();
-            String respJson = client.newCall(request).execute().body().string();
-            System.out.println("resp json: "+respJson);
-            return JSON.parseObject(respJson, RpcfxResponse.class);
+//            OkHttpClient client = new OkHttpClient();
+//            final Request request = new Request.Builder()
+//                    .url(url)
+//                    .post(RequestBody.create(JSONTYPE, reqJson))
+//                    .build();
+//            String respJson = client.newCall(request).execute().body().string();
+
+            NettyHttpClient client = new NettyHttpClient();
+            client.connect(url, host, port);
+
+//            System.out.println("resp json: "+respJson);
+//            return JSON.parseObject(respJson, RpcfxResponse.class);
+            return null;
         }
     }
 }
