@@ -29,19 +29,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="517fdb65-4ac2-43ad-a56b-07335a5714be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_all_4_1_34_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_all_4_1_55_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/HttpClientInBoundHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/NettyHttpClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpcfx-demo-provider/src/main/java/io/kimmking/rpcfx/demo/provider/HttpServerInboundHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpcfx-demo-provider/src/main/java/io/kimmking/rpcfx/demo/provider/NettyServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpcfx-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpcfx-core/rpcfx-core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-core/rpcfx-core.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/Rpcfx.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/Rpcfx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpcfx-demo-consumer/rpcfx-demo-consumer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-demo-consumer/rpcfx-demo-consumer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/HttpClientInBoundHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/HttpClientInBoundHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/NettyHttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/NettyHttpClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpcfx-demo-consumer/src/main/java/io/kimmking/rpcfx/demo/consumer/RpcfxClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-demo-consumer/src/main/java/io/kimmking/rpcfx/demo/consumer/RpcfxClientApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpcfx-demo-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-demo-provider/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpcfx-demo-provider/rpcfx-demo-provider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-demo-provider/rpcfx-demo-provider.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpcfx-demo-provider/src/main/java/io/kimmking/rpcfx/demo/provider/HttpServerInboundHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-demo-provider/src/main/java/io/kimmking/rpcfx/demo/provider/HttpServerInboundHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpcfx-demo-provider/src/main/java/io/kimmking/rpcfx/demo/provider/RpcfxServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpcfx-demo-provider/src/main/java/io/kimmking/rpcfx/demo/provider/RpcfxServerApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +56,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+        <option name="mavenHome" value="D:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -84,9 +77,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../JavaCourseCodes/07rpc/rpc01" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../work/SHSJ/code/darp" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="Debugger_Data_Views_Java" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -95,7 +88,7 @@
       <recent name="io.kimmking.rpcfx.common.result" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.RpcfxServerApplication">
+  <component name="RunManager" selected="Spring Boot.RpcfxClientApplication">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -136,6 +129,8 @@
       <workItem from="1640673907449" duration="991000" />
       <workItem from="1640675962644" duration="298000" />
       <workItem from="1640785967359" duration="3205000" />
+      <workItem from="1640913263497" duration="13322000" />
+      <workItem from="1640942479766" duration="462000" />
     </task>
     <task id="LOCAL-00001" summary="homework2">
       <created>1640828427513</created>
@@ -158,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640848497875</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="homework2 自定义异常">
+      <created>1640859417572</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640859417572</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -206,107 +208,119 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1640847645244" />
-    <state x="765" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1640855495417">
+    <state x="765" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1640915944942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1640855495417" />
+    <state x="765" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1640915944942" />
+    <state x="666" y="329" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1640941885905">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="329" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1640941885905" />
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1640827058130">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1640827058130" />
-    <state x="329" y="85" key="CommitChangelistDialog2" timestamp="1640848496765">
+    <state x="329" y="85" key="CommitChangelistDialog2" timestamp="1640859416521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="329" y="85" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1640848496765" />
-    <state width="848" height="436" key="DebuggerActiveHint" timestamp="1640845007735">
+    <state x="329" y="85" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1640859416521" />
+    <state width="848" height="436" key="DebuggerActiveHint" timestamp="1640940606962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="848" height="436" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1640845007735" />
+    <state width="848" height="436" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1640940606962" />
     <state width="904" height="466" key="DebuggerActiveHint/0.0.2048.1112@0.0.2048.1112" timestamp="1640789178876" />
     <state x="811" y="261" key="EnvironmentVariablesDialog" timestamp="1640851576861">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="811" y="261" key="EnvironmentVariablesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1640851576861" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1640829988982">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1640934882950">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1640829988982" />
-    <state width="1877" height="347" key="GridCell.Tab.0.bottom" timestamp="1640858828041">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1640934882950" />
+    <state width="1877" height="347" key="GridCell.Tab.0.bottom" timestamp="1640942900905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1640858828041" />
+    <state width="1877" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1640942900905" />
     <state width="2005" height="376" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1640789195520" />
-    <state width="1877" height="347" key="GridCell.Tab.0.center" timestamp="1640858828041">
+    <state width="1877" height="347" key="GridCell.Tab.0.center" timestamp="1640942900905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1640858828041" />
+    <state width="1877" height="347" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1640942900905" />
     <state width="2005" height="376" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1640789195520" />
-    <state width="1877" height="347" key="GridCell.Tab.0.left" timestamp="1640858828041">
+    <state width="1877" height="347" key="GridCell.Tab.0.left" timestamp="1640942900905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1640858828041" />
+    <state width="1877" height="347" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1640942900905" />
     <state width="2005" height="376" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1640789195520" />
-    <state width="1877" height="347" key="GridCell.Tab.0.right" timestamp="1640858828041">
+    <state width="1877" height="347" key="GridCell.Tab.0.right" timestamp="1640942900905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1640858828041" />
+    <state width="1877" height="347" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1640942900905" />
     <state width="2005" height="376" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1640789195520" />
-    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1640858828041">
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1640942900905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1640858828041" />
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1640942900905" />
     <state width="2005" height="376" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1640789195520" />
-    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1640858828041">
+    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1640942900905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1640858828041" />
+    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1640942900905" />
     <state width="2005" height="376" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1640789195520" />
-    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1640858828041">
+    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1640942900905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1640858828041" />
+    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1640942900905" />
     <state width="2005" height="376" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1640789195520" />
-    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1640858828041">
+    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1640942900905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1640858828041" />
+    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1640942900905" />
     <state width="2005" height="376" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1640789195520" />
-    <state width="1877" height="347" key="GridCell.Tab.2.bottom" timestamp="1640858828044">
+    <state width="1877" height="347" key="GridCell.Tab.2.bottom" timestamp="1640942900905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1640858828044" />
+    <state width="1877" height="347" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1640942900905" />
     <state width="2005" height="376" key="GridCell.Tab.2.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1640789195520" />
-    <state width="1877" height="347" key="GridCell.Tab.2.center" timestamp="1640858828044">
+    <state width="1877" height="347" key="GridCell.Tab.2.center" timestamp="1640942900905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1640858828044" />
+    <state width="1877" height="347" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1640942900905" />
     <state width="2005" height="376" key="GridCell.Tab.2.center/0.0.2048.1112@0.0.2048.1112" timestamp="1640789195520" />
-    <state width="1877" height="347" key="GridCell.Tab.2.left" timestamp="1640858828043">
+    <state width="1877" height="347" key="GridCell.Tab.2.left" timestamp="1640942900905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1640858828043" />
+    <state width="1877" height="347" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1640942900905" />
     <state width="2005" height="376" key="GridCell.Tab.2.left/0.0.2048.1112@0.0.2048.1112" timestamp="1640789195520" />
-    <state width="1877" height="347" key="GridCell.Tab.2.right" timestamp="1640858828044">
+    <state width="1877" height="347" key="GridCell.Tab.2.right" timestamp="1640942900905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1640858828044" />
+    <state width="1877" height="347" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1640942900905" />
     <state width="2005" height="376" key="GridCell.Tab.2.right/0.0.2048.1112@0.0.2048.1112" timestamp="1640789195520" />
     <state x="556" y="220" key="RollbackChangesDialog" timestamp="1640676198196">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="556" y="220" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1640676198196" />
-    <state x="453" y="164" key="SettingsEditor" timestamp="1640851577532">
+    <state x="453" y="164" key="SettingsEditor" timestamp="1640939789826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="453" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1640851577532" />
-    <state x="662" y="251" width="650" height="538" key="find.popup" timestamp="1640836024601">
+    <state x="453" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1640939789826" />
+    <state x="483" y="249" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1640939472992">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="251" width="650" height="538" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1640836024601" />
+    <state x="483" y="249" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1640939472992" />
+    <state x="662" y="251" width="674" height="538" key="find.popup" timestamp="1640942924082">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="662" y="251" width="674" height="538" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1640942924082" />
     <state x="845" y="312" key="refactoring.ChangeSignatureDialog" timestamp="1640787912617">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="845" y="312" key="refactoring.ChangeSignatureDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1640787912617" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1640937143056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1640937143056" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1640832780470">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -316,54 +330,64 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rpcfx-demo-consumer/src/main/java/io/kimmking/rpcfx/demo/consumer/RpcfxClientApplication.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rpcfx-demo-provider/src/main/java/io/kimmking/rpcfx/demo/provider/HttpServerInboundHandler.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/rpcfx-demo-provider/src/main/java/io/kimmking/rpcfx/demo/provider/RpcfxServerApplication.java</url>
-          <line>81</line>
-          <option name="timeStamp" value="22" />
+          <line>72</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/HttpClientInBoundHandler.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/server/RpcfxInvoker.java</url>
           <line>28</line>
-          <option name="timeStamp" value="23" />
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/server/RpcfxInvoker.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/server/RpcfxInvoker.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/NettyHttpClient.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/Rpcfx.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="25" />
+          <line>120</line>
+          <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rpcfx-demo-consumer/src/main/java/io/kimmking/rpcfx/demo/consumer/aspect/ServiceAspect.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rpcfx-demo-provider/src/main/java/io/kimmking/rpcfx/demo/provider/RpcfxServerApplication.java</url>
-          <line>114</line>
-          <option name="timeStamp" value="29" />
+          <url>file://$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/NettyHttpClient.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/rpcfx-demo-provider/src/main/java/io/kimmking/rpcfx/demo/provider/HttpServerInboundHandler.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/HttpClientInBoundHandler.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/HttpClientInBoundHandler.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="32" />
+          <line>28</line>
+          <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/rpcfx-demo-provider/src/main/java/io/kimmking/rpcfx/demo/provider/HttpServerInboundHandler.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rpcfx-core/src/main/java/io/kimmking/rpcfx/client/Rpcfx.java</url>
-          <line>119</line>
-          <option name="timeStamp" value="34" />
+          <line>59</line>
+          <option name="timeStamp" value="92" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

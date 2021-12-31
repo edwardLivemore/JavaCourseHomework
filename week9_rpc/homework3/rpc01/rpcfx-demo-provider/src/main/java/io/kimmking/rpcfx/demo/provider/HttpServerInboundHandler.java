@@ -5,6 +5,7 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.codec.http.*;
+import lombok.extern.slf4j.Slf4j;
 
 import java.nio.charset.StandardCharsets;
 
@@ -14,11 +15,23 @@ import static io.netty.handler.codec.http.HttpResponseStatus.OK;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+@Slf4j
 public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter {
     private HttpRequest request;
 
     @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        log.info("收到客户端连接...");
+    }
+
+    @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception{
+        if(true){
+            ctx.write("ok, hello");
+            ctx.flush();
+            return;
+        }
+
         if(msg instanceof HttpRequest){
             request = (HttpRequest) msg;
         }

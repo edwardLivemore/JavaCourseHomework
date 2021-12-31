@@ -7,16 +7,10 @@ import io.kimmking.rpcfx.api.ServiceProviderDesc;
 import io.kimmking.rpcfx.demo.api.OrderService;
 import io.kimmking.rpcfx.demo.api.UserService;
 import io.kimmking.rpcfx.server.RpcfxInvoker;
-import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
-import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.SocketChannel;
-import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.http.*;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.zookeeper.CreateMode;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -30,10 +24,7 @@ import java.net.InetAddress;
 
 @SpringBootApplication
 @RestController
-public class RpcfxServerApplication implements ApplicationRunner {
-	@Value("${server.port}")
-	private Integer port;
-
+public class RpcfxServerApplication {
 	public static void main(String[] args) throws Exception {
 
 //		// start zk client
@@ -110,33 +101,4 @@ public class RpcfxServerApplication implements ApplicationRunner {
 		return new OrderServiceImpl();
 	}
 
-	@Override
-	public void run(ApplicationArguments args) throws Exception {
-		EventLoopGroup bossGroup = new NioEventLoopGroup();
-		EventLoopGroup workerGroup = new NioEventLoopGroup();
-
-
-		ServerBootstrap bootstrap = new ServerBootstrap();
-		try {
-			bootstrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class)
-					.childHandler(new ChannelInitializer<SocketChannel>() {
-						@Override
-						protected void initChannel(SocketChannel ch) throws Exception {
-							// 对response编码
-							ch.pipeline().addLast(new HttpRequestEncoder());
-							// 对request解码
-							ch.pipeline().addLast(new HttpRequestDecoder());
-							ch.pipeline().addLast(new HttpServerInboundHandler());
-						}
-					}).option(ChannelOption.SO_BACKLOG, 128)
-					.childOption(ChannelOption.SO_KEEPALIVE, true);
-
-			ChannelFuture channelFuture = bootstrap.bind(port).sync();
-
-			channelFuture.channel().closeFuture().sync();
-		} finally {
-			workerGroup.shutdownGracefully();
-			bossGroup.shutdownGracefully();
-		}
-	}
 }

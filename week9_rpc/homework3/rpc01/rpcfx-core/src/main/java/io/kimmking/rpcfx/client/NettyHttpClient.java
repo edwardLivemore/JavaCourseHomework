@@ -14,7 +14,7 @@ import java.net.URI;
 
 import static io.netty.handler.codec.http.HttpHeaders.Names.*;
 import static io.netty.handler.codec.http.HttpHeaders.Values.KEEP_ALIVE;
-import static io.netty.handler.codec.http.HttpMethod.GET;
+import static io.netty.handler.codec.http.HttpMethod.POST;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 
 public class NettyHttpClient {
@@ -42,8 +42,8 @@ public class NettyHttpClient {
 
             ChannelFuture channelFuture = bootstrap.connect(host, port).sync();
 
-            URI uri = new URI(url);
-            DefaultFullHttpRequest request = new DefaultFullHttpRequest(HTTP_1_1, GET, uri.toASCIIString());
+            URI uri = new URI("/");
+            DefaultFullHttpRequest request = new DefaultFullHttpRequest(HTTP_1_1, POST, uri.toASCIIString());
 
             // 构建http请求
             request.headers().set(HOST, host);
@@ -51,8 +51,8 @@ public class NettyHttpClient {
             request.headers().set(CONTENT_LENGTH, request.content().readableBytes());
 
             // 发送http请求
-            channelFuture.channel().write(request);
-            channelFuture.channel().flush();
+            channelFuture.channel().writeAndFlush(request);
+//            channelFuture.channel().writeAndFlush("hello");
             channelFuture.channel().closeFuture().sync();
         } finally {
             workerGroup.shutdownGracefully();
