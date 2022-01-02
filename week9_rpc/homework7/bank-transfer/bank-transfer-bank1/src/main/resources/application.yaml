@@ -25,4 +25,3 @@ dubbo:
     qos-accept-foreign-ip-compatible: true
     qos-host: localhost
 
-
