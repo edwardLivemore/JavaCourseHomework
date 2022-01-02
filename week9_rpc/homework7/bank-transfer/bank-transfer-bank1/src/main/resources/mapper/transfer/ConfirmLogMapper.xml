@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.edward.banktransferbank1.modules.transfer.mapper.ConfirmLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.edward.banktransferbank1.modules.transfer.model.ConfirmLog">
+        <id column="tx_id" property="txId" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+</mapper>
