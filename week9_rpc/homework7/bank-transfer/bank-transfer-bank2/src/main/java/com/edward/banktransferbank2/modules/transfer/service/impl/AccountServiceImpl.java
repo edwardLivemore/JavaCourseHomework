@@ -39,8 +39,8 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
     @Autowired
     private CancelLogService cancelLogService;
 
-    @DubboReference
-    private Bank1Service bank1Service;
+    @DubboReference(version = "1.0.0")
+    Bank1Service bank1Service;
 
     @Override
     @Hmily(confirmMethod = "confirm", cancelMethod = "cancel")
@@ -85,7 +85,7 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
         tryLog.setTxId(transId);
         tryLogService.save(tryLog);
 
-        // 调用bank2发起转账
+        // 调用bank1发起转账
         try {
             bank1Service.transfer(2L, amount, type);
         }catch (Exception e){

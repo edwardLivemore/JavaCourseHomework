@@ -40,8 +40,8 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
     @Autowired
     private CancelLogService cancelLogService;
 
-    @DubboReference
-    private Bank2Service bank2Service;
+    @DubboReference(version = "1.0.0")
+    Bank2Service bank2Service;
 
     @Override
     @Hmily(confirmMethod = "confirm", cancelMethod = "cancel")

@@ -15,6 +15,10 @@ dubbo:
   protocol:
     name: dubbo
     port: 12345
+  registry:
+    address: zookeeper://localhost:2181
+  metadata-report:
+    address: zookeeper://localhost:2181
   application:
     qosEnable: true
     qosPort: 22222
