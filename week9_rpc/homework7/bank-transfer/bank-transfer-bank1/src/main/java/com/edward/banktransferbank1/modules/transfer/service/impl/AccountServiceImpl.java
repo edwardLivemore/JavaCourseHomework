@@ -11,11 +11,11 @@ import org.dromara.hmily.annotation.Hmily;
 import org.dromara.hmily.common.exception.HmilyRuntimeException;
 import org.dromara.hmily.core.concurrent.threadlocal.HmilyTransactionContextLocal;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * <p>
@@ -25,7 +25,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author eagle
  * @since 2022-01-02
  */
-@Service
+@Component
 @Slf4j
 public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> implements AccountService{
     @Autowired
