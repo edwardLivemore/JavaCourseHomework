@@ -1,0 +1,3 @@
+2022-01-05 15:35:18.504 DEBUG 20304 --- [main] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-05 15:35:25.726 ERROR 20304 --- [main] o.d.h.c.s.r.JdbcCoordinatorRepository    : hmily jdbc log init exception please check config:null
+2022-01-05 15:35:25.729 ERROR 20304 --- [main] o.d.h.c.s.impl.HmilyInitServiceImpl      :  hmily init exception:java.lang.NullPointerException

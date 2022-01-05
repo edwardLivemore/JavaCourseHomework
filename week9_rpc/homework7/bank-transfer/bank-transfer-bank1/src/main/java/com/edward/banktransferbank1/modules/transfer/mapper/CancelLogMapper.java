@@ -2,6 +2,7 @@ package com.edward.banktransferbank1.modules.transfer.mapper;
 
 import com.edward.banktransferbank1.modules.transfer.model.CancelLog;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author eagle
  * @since 2022-01-02
  */
+@Mapper
 public interface CancelLogMapper extends BaseMapper<CancelLog> {
 
 }

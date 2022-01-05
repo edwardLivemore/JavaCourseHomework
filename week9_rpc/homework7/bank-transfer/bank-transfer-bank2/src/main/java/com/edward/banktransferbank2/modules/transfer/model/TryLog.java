@@ -1,5 +1,6 @@
 package com.edward.banktransferbank2.modules.transfer.model;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.util.Date;
 import java.io.Serializable;
@@ -24,6 +25,7 @@ public class TryLog implements Serializable {
     /**
      * 事务id
      */
+    @TableId(value = "tx_id")
     private String txId;
 
     /**

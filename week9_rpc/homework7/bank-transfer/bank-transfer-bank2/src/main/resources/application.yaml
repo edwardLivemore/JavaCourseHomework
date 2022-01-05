@@ -29,4 +29,16 @@ dubbo:
     qos-accept-foreign-ip-compatible: true
     qos-host: localhost
 
+org:
+  dromara:
+    hmily:
+      hmily-zookeeper-config:
+        host: localhost:2181
+      hmily-db-config:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/hmily?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+        username: root
+      hmily-file-config:
+        prefix: /hmily
+        path: D:\\hmilyLog
 

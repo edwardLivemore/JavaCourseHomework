@@ -1,5 +1,7 @@
 package com.edward.banktransferbank1.modules.transfer.model;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.time.LocalDateTime;
@@ -25,6 +27,7 @@ public class CancelLog implements Serializable {
     /**
      * 事务id
      */
+    @TableId(value = "tx_id")
     private String txId;
 
     /**
