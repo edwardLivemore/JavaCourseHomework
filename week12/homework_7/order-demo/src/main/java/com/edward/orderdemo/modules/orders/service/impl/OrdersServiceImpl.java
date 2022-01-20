@@ -4,6 +4,7 @@ import com.edward.orderdemo.modules.orders.model.Orders;
 import com.edward.orderdemo.modules.orders.mapper.OrdersMapper;
 import com.edward.orderdemo.modules.orders.service.OrdersService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.apache.commons.lang3.RandomUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -25,8 +26,8 @@ public class OrdersServiceImpl extends ServiceImpl<OrdersMapper, Orders> impleme
         List<Orders> orders = new ArrayList<>();
         for(long i = 0; i < size; i++) {
             Orders order = new Orders();
-            order.setUserId(i + 1);
-            order.setProductId(i + 1);
+            order.setUserId(RandomUtils.nextLong());
+            order.setProductId(RandomUtils.nextLong());
             order.setStatus(0);
             orders.add(order);
         }
