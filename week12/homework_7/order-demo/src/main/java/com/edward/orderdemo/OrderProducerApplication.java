@@ -35,7 +35,7 @@ public class OrderProducerApplication implements ApplicationRunner {
 			// 每隔100ms生成20个订单
 			ordersService.addOrders(20);
 			current += batchSize;
-			Thread.sleep(100);
+			Thread.sleep(50);
 		}
 		log.info("生成订单完成");
 
