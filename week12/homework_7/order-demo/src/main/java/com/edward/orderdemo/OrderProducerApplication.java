@@ -32,7 +32,7 @@ public class OrderProducerApplication implements ApplicationRunner {
 		log.info("正在生成订单...");
 		int current = 0;
 		while(current < total) {
-			// 每隔100ms生成20个订单
+			// 每隔50ms生成20个订单
 			ordersService.addOrders(20);
 			current += batchSize;
 			Thread.sleep(50);
