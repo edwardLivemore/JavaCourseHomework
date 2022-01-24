@@ -1,0 +1,40 @@
+docker run -d --name kafka1 --publish 9001:9001 --link zk1  -e KAFKA_BROKER_ID=1  -e KAFKA_BROKER_LIST=localhost:9001,localhost:9002,localhost:9003  -e KAFKA_LOG_DIRS=/tmp/kafka/kafka-logs1 -e KAFKA_ZOOKEEPER_CONNECT=zk1:2181  -e KAFKA_ADVERTISED_HOST_NAME=localhost  -e KAFKA_ADVERTISED_PORT=9001  -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9001  -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9001  -e ALLOW_PLAINTEXT_LISTENER=yes  -t bitnami/kafka
+docker run -d --name kafka2 --publish 9002:9002 --link zk1  -e KAFKA_BROKER_ID=2  -e KAFKA_BROKER_LIST=localhost:9001,localhost:9002,localhost:9003  -e KAFKA_LOG_DIRS=/tmp/kafka/kafka-logs2 -e KAFKA_ZOOKEEPER_CONNECT=zk1:2181  -e KAFKA_ADVERTISED_HOST_NAME=localhost  -e KAFKA_ADVERTISED_PORT=9002  -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9002  -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9002  -e ALLOW_PLAINTEXT_LISTENER=yes  -t bitnami/kafka
+docker run -d --name kafka3 --publish 9003:9003 --link zk1  -e KAFKA_BROKER_ID=3  -e KAFKA_BROKER_LIST=localhost:9001,localhost:9002,localhost:9003  -e KAFKA_LOG_DIRS=/tmp/kafka/kafka-logs3 -e KAFKA_ZOOKEEPER_CONNECT=zk1:2181  -e KAFKA_ADVERTISED_HOST_NAME=localhost  -e KAFKA_ADVERTISED_PORT=9003  -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9003  -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9003  -e ALLOW_PLAINTEXT_LISTENER=yes  -t bitnami/kafka
+
+
+
+docker run -d --name kafka1 --publish 9001:9001 --link zk1  -e KAFKA_BROKER_ID=1 -e KAFKA_LOG_DIRS=/tmp/kafka/kafka-logs1 -e KAFKA_ZOOKEEPER_CONNECT=zk1:2181    -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9001  -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9001  -e ALLOW_PLAINTEXT_LISTENER=yes  -t bitnami/kafka
+docker run -d --name kafka2 --publish 9002:9001 --link zk1  -e KAFKA_BROKER_ID=2  -e KAFKA_BROKER_LIST=localhost:9001,localhost:9002,localhost:9003  -e KAFKA_LOG_DIRS=/tmp/kafka/kafka-logs2 -e KAFKA_ZOOKEEPER_CONNECT=zk1:2181    -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9002  -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9002  -e ALLOW_PLAINTEXT_LISTENER=yes  -t bitnami/kafka
+docker run -d --name kafka3 --publish 9003:9001 --link zk1  -e KAFKA_BROKER_ID=3  -e KAFKA_BROKER_LIST=localhost:9001,localhost:9002,localhost:9003  -e KAFKA_LOG_DIRS=/tmp/kafka/kafka-logs3 -e KAFKA_ZOOKEEPER_CONNECT=zk1:2181    -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9003  -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9003  -e ALLOW_PLAINTEXT_LISTENER=yes  -t bitnami/kafka
+
+
+
+
+
+
+
+docker run -d --name kafka2 \
+ -p 9002:9001 \
+ -e KAFKA_BROKER_ID=2 \
+ -e KAFKA_ZOOKEEPER_CONNECT=127.0.0.1:2181 \
+ -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://127.0.0.1:9002 \
+ -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9002 \
+ -e ALLOW_PLAINTEXT_LISTENER=yes \
+ -t bitnami/kafka
+
+docker run -d --name kafka3 \
+ -p 9003:9001 \
+ -e KAFKA_BROKER_ID=3 \
+ -e KAFKA_ZOOKEEPER_CONNECT=127.0.0.1:2181 \
+ -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://127.0.0.1:9003 \
+ -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9003 \
+ -e ALLOW_PLAINTEXT_LISTENER=yes \
+ -t bitnami/kafka
+
+docker run -d --name kafka1 --publish 9001:9001 --link zk1 \
+ --env KAFKA_ZOOKEEPER_CONNECT=zk1:2181 \
+ --env KAFKA_ADVERTISED_HOST_NAME=localhost \
+ --env KAFKA_ADVERTISED_PORT=9001 \
+ -e ALLOW_PLAINTEXT_LISTENER=yes \
+ -t bitnami/kafka
