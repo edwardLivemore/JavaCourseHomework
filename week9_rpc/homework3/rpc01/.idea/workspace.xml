@@ -29,45 +29,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="517fdb65-4ac2-43ad-a56b-07335a5714be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-common/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-common/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-common/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-common/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-common/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-common/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-common/src/test/java/com/edward/mqcommon/MqCommonApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-consumer/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-consumer/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-consumer/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-consumer/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-consumer/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-consumer/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-consumer/src/main/java/com/edawrd/mqconsumer/MqConsumerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-consumer/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-consumer/src/test/java/com/edawrd/mqconsumer/MqConsumerApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-producer/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-producer/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-producer/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-producer/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-producer/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-producer/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-producer/src/main/java/com/edward/mqproducer/MqProducerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-producer/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-producer/src/test/java/com/edward/mqproducer/MqProducerApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-server/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-server/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-server/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-server/src/main/java/com/edawrd/mqserver/MqServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-server/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/mq-server/src/test/java/com/edawrd/mqserver/MqServerApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../week13/homework_6/edwardmq/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,7 +113,7 @@
       <workItem from="1640785967359" duration="3205000" />
       <workItem from="1640913263497" duration="13322000" />
       <workItem from="1640942479766" duration="462000" />
-      <workItem from="1643102576664" duration="1299000" />
+      <workItem from="1643102576664" duration="1614000" />
     </task>
     <task id="LOCAL-00001" summary="homework2">
       <created>1640828427513</created>
