@@ -1,10 +1,13 @@
 package com.edward.mqcommon.entity;
 
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Vector;
 
 @Data
-public class Mq {
+@Slf4j
+public class Mq<T> {
 
     public Mq(int capacity) {
         this.capacity = capacity;
@@ -16,14 +19,16 @@ public class Mq {
     private int capacity;
     private int writeOffset;
     private int readOffset;
-    private Vector<MqMessage> queue;
+    private Vector<MqMessage<T>> queue;
 
-    public MqMessage poll() {
+    public MqMessage<T> poll() {
+        log.info("当前readOffset为: {}", readOffset);
         return queue.get(readOffset++);
     }
 
-    public void send(MqMessage message) {
+    public void send(MqMessage<T> message) {
         queue.add(message);
+        log.info("当前writeOffset为: {}", writeOffset);
         writeOffset++;
     }
 }
